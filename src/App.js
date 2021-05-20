@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import TodoContainer from "./container/todo_container";
+
 import axios from "axios";
 import "./App.css";
 
@@ -17,10 +19,7 @@ function App() {
     <div>
       <h1>TODO</h1>
       <div>
-        {todos.map((todo) => {
-          console.log(todo.text, "MAP");
-          return <li>{todo.text}</li>;
-        })}
+        <TodoContainer todos={todos} />
       </div>
     </div>
   );
