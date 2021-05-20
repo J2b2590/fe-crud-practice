@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import React, { useState, useEffect } from "react";
 
 import axios from "axios";
@@ -9,13 +8,20 @@ function App() {
 
   useEffect(() => {
     axios.get("http://localhost:3000/todos").then((res) => {
-      console.log(res);
+      setTodos(res.data);
     });
-  });
+    console.log(todos);
+  }, []);
 
   return (
-    <div className="App">
+    <div>
       <h1>TODO</h1>
+      <div>
+        {todos.map((todo) => {
+          console.log(todo.text, "MAP");
+          return <li>{todo.text}</li>;
+        })}
+      </div>
     </div>
   );
 }
