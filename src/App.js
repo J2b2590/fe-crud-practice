@@ -15,11 +15,21 @@ function App() {
     console.log(todos);
   }, []);
 
+  const handleDelete = (id) => {
+    axios.delete(`http://localhost:3000/todos/${id}`).then((del) => {
+      axios.get("http://localhost:3000/todos").then((res) => {
+        // console.log(res, "NEW TODOs");
+        return setTodos(res.data);
+      });
+      // console.log(del);
+    });
+  };
+
   return (
     <div>
       <h1>TODO</h1>
       <div>
-        <TodoContainer todos={todos} />
+        <TodoContainer todos={todos} handleDelete={handleDelete} />
       </div>
     </div>
   );

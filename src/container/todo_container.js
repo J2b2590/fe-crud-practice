@@ -8,7 +8,9 @@ function TodoContainer(props) {
       <p>container</p>
       {props.todos.map((todo) => {
         // console.log(todo.text, "MAP");
-        return <Todos key={todo.id} {...todo} />;
+        return (
+          <Todos key={todo.id} {...todo} handleDelete={props.handleDelete} />
+        );
       })}
     </div>
   );
