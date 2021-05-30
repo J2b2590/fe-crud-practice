@@ -9,7 +9,11 @@ function App() {
   let [todos, setTodos] = useState([]);
   let [count, setCount] = useState(0);
 
-  useEffect(() => {});
+  useEffect(() => {
+    setTimeout(() => {
+      setCount(count + 1);
+    }, 1000);
+  });
 
   useEffect(() => {
     axios.get("http://localhost:3000/todos").then((res) => {
