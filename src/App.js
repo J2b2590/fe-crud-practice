@@ -10,9 +10,10 @@ function App() {
   let [count, setCount] = useState(0);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setCount(count + 1);
     }, 1000);
+    return () => clearTimeout(timer);
   });
 
   useEffect(() => {
@@ -42,6 +43,7 @@ function App() {
           Click me to count up
         </button>
         <button onClick={() => setCount((count = 0))}>CLEAR TIMER</button>
+        <button onClick={() => setCount(count - 1)}>Subtract</button>
       </div>
     </div>
   );
