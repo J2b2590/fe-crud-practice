@@ -41,6 +41,7 @@ function App() {
         <button onClick={() => setCount(count + 1)}>
           Click me to count up
         </button>
+        <button onClick={() => setCount((count = 0))}>CLEAR TIMER</button>
       </div>
     </div>
   );
