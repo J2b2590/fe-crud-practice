@@ -5,3 +5,8 @@
 .show {
   color: blueviolet;
 }
+
+.app {
+  margin: auto;
+  text-align: center;
+}

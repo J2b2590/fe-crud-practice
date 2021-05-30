@@ -7,6 +7,9 @@ import "./App.css";
 
 function App() {
   let [todos, setTodos] = useState([]);
+  let [count, setCount] = useState(0);
+
+  useEffect(() => {});
 
   useEffect(() => {
     axios.get("http://localhost:3000/todos").then((res) => {
@@ -26,10 +29,14 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="app">
       <h1>TODO</h1>
       <div>
         <TodoContainer todos={todos} handleDelete={handleDelete} />
+        <p>{count}</p>
+        <button onClick={() => setCount(count + 1)}>
+          Click me to count up
+        </button>
       </div>
     </div>
   );
