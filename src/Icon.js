@@ -3,17 +3,21 @@ import React, { useState, useEffect } from "react";
 import { ReactComponent as Example } from "./example.svg";
 
 function Icons(props) {
-  let color = "";
+  let fillColor = "";
+  let strokeColor = "";
 
-  switch (props.num % 2 || props.num % 5) {
+  switch (props.num % 2 || props.num % 5 || props.num % 3) {
     case 0:
-      color = "green";
+      fillColor = "green";
+      strokeColor = "yellow";
       break;
     case 1:
-      color = "purple";
+      fillColor = "purple";
+      strokeColor = "green";
       break;
     case 3:
-      color = "blue";
+      fillColor = "blue";
+      strokeColor = "orange";
       break;
 
     default:
@@ -22,7 +26,7 @@ function Icons(props) {
 
   return (
     <div>
-      <Example fill={color} stroke="green" />
+      <Example fill={fillColor} stroke={strokeColor} />
     </div>
   );
 }
