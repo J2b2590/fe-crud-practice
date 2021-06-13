@@ -21,11 +21,12 @@ function TodoContainer(props) {
     axios
       .post("http://localhost:3000/todos", userObject)
       .then((res) => {
-        console.log(res.data);
+        console.log(res.data, "THEN RES");
       })
       .catch((error) => {
         console.log(error);
       });
+    setTodo(" ");
   };
 
   return (
@@ -36,7 +37,7 @@ function TodoContainer(props) {
         <h1>Create todo</h1>
         <input
           onChange={handleChange}
-          value={props.todo}
+          value={props.text}
           type="text"
           name="name"
           placeholder="Enter TODO"
@@ -46,7 +47,12 @@ function TodoContainer(props) {
       {props.todos.map((todo) => {
         // console.log(todo.text, "MAP");
         return (
-          <Todos key={todo.id} {...todo} handleDelete={props.handleDelete} />
+          <Todos
+            key={todo.id}
+            {...text}
+            {...todo}
+            handleDelete={props.handleDelete}
+          />
         );
       })}
     </div>

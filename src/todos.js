@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 function Todos(props) {
-  console.log(props, "TODOs");
+  // console.log(props, "TODOs");
 
   //   let [isActive, setActive] = useState("false");
 
