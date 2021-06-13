@@ -5,7 +5,9 @@ function TodoContainer(props) {
   console.log(props, "CONTAINER");
   let [todo, setTodo] = useState([]);
 
-  const handleChange = () => {};
+  const handleChange = (e) => {
+    setTodo(e.target.value);
+  };
 
   return (
     <div>
@@ -14,7 +16,7 @@ function TodoContainer(props) {
       <form>
         <h1>Create todo</h1>
         <input
-          onChange={this.handleChange}
+          onChange={handleChange}
           value={this.state.todo}
           type="text"
           name="name"
