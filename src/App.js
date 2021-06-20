@@ -10,8 +10,8 @@ import "./App.css";
 function App() {
   let [todos, setTodos] = useState([]);
 
-  useEffect(() => {
-    axios.get("http://localhost:3000/todos").then((res) => {
+  useEffect(async () => {
+    await axios.get("http://localhost:3000/todos").then((res) => {
       setTodos(res.data);
     });
     // console.log(todos);

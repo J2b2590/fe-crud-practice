@@ -1,25 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Todos from "../todos";
 import axios from "axios";
 
 function TodoContainer(props) {
   console.log(props, "CONTAINER");
-  let [text, setTodo] = useState(" ");
+  let [text, setText] = useState(" ");
 
   const handleChange = (e) => {
-    setTodo(e.target.value);
+    setText(e.target.value);
     // console.log(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const textObj = { text };
+    const textObj = { text: text };
 
     axios
       .post("http://localhost:3000/todos", textObj)
       .then((res) => {
         console.log(res.data, "THEN RES");
+        setText(" ");
       })
       .catch((error) => {
         console.log(error);
@@ -35,7 +36,7 @@ function TodoContainer(props) {
         <h1>Create todo</h1>
         <input
           onChange={handleChange}
-          value={props.text}
+          value={text}
           type="text"
           name="text"
           placeholder="Enter TODO"
