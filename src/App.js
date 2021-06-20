@@ -10,12 +10,12 @@ import "./App.css";
 function App() {
   let [todos, setTodos] = useState([]);
 
-  useEffect(async () => {
-    await axios.get("http://localhost:3000/todos").then((res) => {
+  useEffect(() => {
+    axios.get("http://localhost:3000/todos").then((res) => {
       setTodos(res.data);
     });
     // console.log(todos);
-  }, []);
+  });
 
   const handleDelete = (id) => {
     axios.delete(`http://localhost:3000/todos/${id}`).then((del) => {
