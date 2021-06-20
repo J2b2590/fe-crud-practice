@@ -14,19 +14,17 @@ function TodoContainer(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const userObject = {
-      text,
-    };
+    const textObj = { text };
 
     axios
-      .post("http://localhost:3000/todos", userObject)
+      .post("http://localhost:3000/todos", textObj)
       .then((res) => {
         console.log(res.data, "THEN RES");
       })
       .catch((error) => {
         console.log(error);
       });
-    setTodo(" ");
+    // setTodo(" ");
   };
 
   return (
@@ -39,7 +37,7 @@ function TodoContainer(props) {
           onChange={handleChange}
           value={props.text}
           type="text"
-          name="name"
+          name="text"
           placeholder="Enter TODO"
         />
         <button>Enter</button>
@@ -47,12 +45,7 @@ function TodoContainer(props) {
       {props.todos.map((todo) => {
         // console.log(todo.text, "MAP");
         return (
-          <Todos
-            key={todo.id}
-            {...text}
-            {...todo}
-            handleDelete={props.handleDelete}
-          />
+          <Todos key={todo.id} {...todo} handleDelete={props.handleDelete} />
         );
       })}
     </div>
