@@ -15,7 +15,7 @@ function App() {
       setTodos(res.data);
     });
     // console.log(todos);
-  });
+  }, []);
 
   const handleDelete = (id) => {
     axios.delete(`http://localhost:3000/todos/${id}`).then((del) => {
@@ -32,8 +32,8 @@ function App() {
       <h1>TODO</h1>
       <div>
         <TodoContainer todos={todos} handleDelete={handleDelete} />
-        {/* <Counter />
-        <Icons /> */}
+        <Counter />
+        <Icons />
       </div>
     </div>
   );

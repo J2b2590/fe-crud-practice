@@ -25,8 +25,15 @@ function TodoContainer(props) {
       .catch((error) => {
         console.log(error);
       });
+
     // setTodo(" ");
   };
+  useEffect(() => {
+    axios.get("http://localhost:3000/todos").then((res) => {
+      console.log(res.data, "USE EFE");
+      setText(res.data.text);
+    });
+  }, []);
 
   return (
     <div>
@@ -46,7 +53,12 @@ function TodoContainer(props) {
       {props.todos.map((todo) => {
         // console.log(todo.text, "MAP");
         return (
-          <Todos key={todo.id} {...todo} handleDelete={props.handleDelete} />
+          <Todos
+            key={todo.id}
+            {...text}
+            {...todo}
+            handleDelete={props.handleDelete}
+          />
         );
       })}
     </div>

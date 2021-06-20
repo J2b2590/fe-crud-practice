@@ -4,12 +4,12 @@ import Icons from "./Icon";
 function Counter() {
   let [count, setCount] = useState(0);
 
-//   useEffect(() => {
-//     const timer = setTimeout(() => {
-//       setCount(count + 1);
-//     }, 1000);
-//     return () => clearTimeout(timer);
-//   });
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCount(count + 1);
+    }, 1000);
+    return () => clearTimeout(timer);
+  });
   return (
     <div>
       <p>{count}</p>
