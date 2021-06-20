@@ -20,20 +20,14 @@ function TodoContainer(props) {
       .post("http://localhost:3000/todos", textObj)
       .then((res) => {
         console.log(res.data, "THEN RES");
-        setText(" ");
+        setText(...text, res.data.text);
       })
       .catch((error) => {
         console.log(error);
       });
 
-    // setTodo(" ");
+    setText(" ");
   };
-  useEffect(() => {
-    axios.get("http://localhost:3000/todos").then((res) => {
-      console.log(res.data, "USE EFE");
-      setText(res.data.text);
-    });
-  }, []);
 
   return (
     <div>

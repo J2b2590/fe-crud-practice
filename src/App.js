@@ -7,15 +7,16 @@ import Icons from "./Icon";
 import axios from "axios";
 import "./App.css";
 
-function App() {
+function App(props) {
   let [todos, setTodos] = useState([]);
+  console.log(props, "APPPPP");
 
   useEffect(() => {
     axios.get("http://localhost:3000/todos").then((res) => {
       setTodos(res.data);
     });
     // console.log(todos);
-  }, []);
+  }, [...todos]);
 
   const handleDelete = (id) => {
     axios.delete(`http://localhost:3000/todos/${id}`).then((del) => {

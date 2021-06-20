@@ -1,14 +1,16 @@
 // import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+// import axios from "axios";
 
 function Todos(props) {
-  // console.log(props, "TODOs");
-
-  //   let [isActive, setActive] = useState("false");
-
-  //   const handleToggle = () => {
-  //     setActive(!isActive);
-  //   };
+  console.log(props, "TODOs");
+  // let [todos, setTodos] = useState([]);
+  // useEffect(() => {
+  //   axios.get("http://localhost:3000/todos").then((res) => {
+  //     setTodos(res.data.text);
+  //   });
+  //   // console.log(todos);
+  // }, []);
 
   return (
     <div>
