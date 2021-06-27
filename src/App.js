@@ -33,8 +33,8 @@ function App(props) {
       <h1>TODO</h1>
       <div>
         <TodoContainer todos={todos} handleDelete={handleDelete} />
-        <Counter />
-        <Icons />
+        {/* <Counter />
+        <Icons /> */}
       </div>
     </div>
   );

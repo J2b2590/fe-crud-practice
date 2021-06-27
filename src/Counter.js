@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Icons from "./Icon";
 
 function Counter() {
   let [count, setCount] = useState(0);
@@ -16,7 +15,6 @@ function Counter() {
       <button onClick={() => setCount(count + 1)}>Click me to count up</button>
       <button onClick={() => setCount((count = 0))}>CLEAR TIMER</button>
       <button onClick={() => setCount(count - 1)}>Subtract</button>
-      <Icons num={count} />
     </div>
   );
 }

@@ -20,7 +20,8 @@ function TodoContainer(props) {
       .post("http://localhost:3000/todos", textObj)
       .then((res) => {
         console.log(res.data, "THEN RES");
-        setText(...text, res.data.text);
+
+        setText(res.data.text);
       })
       .catch((error) => {
         console.log(error);
@@ -44,12 +45,13 @@ function TodoContainer(props) {
         />
         <button>Enter</button>
       </form>
+
       {props.todos.map((todo) => {
         // console.log(todo.text, "MAP");
         return (
           <Todos
             key={todo.id}
-            {...text}
+            newTodos={text}
             {...todo}
             handleDelete={props.handleDelete}
           />
