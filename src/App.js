@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Redirect, Route, Switch } from "react-router-dom";
 
 import TodoContainer from "./container/todo_container";
+import Show from "./Show";
 import Counter from "./Counter";
 import Icons from "./Icon";
 
@@ -33,7 +35,9 @@ function App(props) {
       <h1>TODO</h1>
       <div>
         <TodoContainer todos={todos} handleDelete={handleDelete} />
-        <Route component={Show} exact path="/todos/show/:id" />
+        <Switch>
+          <Route component={Show} exact path="/todos/show/:id" />
+        </Switch>
         {/* <Counter />
         <Icons /> */}
       </div>

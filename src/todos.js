@@ -11,15 +11,11 @@ function Todos(props) {
   //   // console.log(todos);
   // }, []);
 
-  const handleShow = (e) => {
-    // console.log(e, "SHOW");
-  };
-
   return (
     <div>
       <li>{props.text}</li>
       <button onClick={() => props.handleDelete(props.id)}>Delete</button>
-      <button onClick={handleShow()}>show</button>
+      {/* <button onClick={() => props.handleShow(props.id)}>show</button> */}
     </div>
   );
 }

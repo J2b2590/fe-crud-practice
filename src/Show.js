@@ -1,7 +1,10 @@
 import React from "react";
 
 function Show(props) {
-  return <h1>show</h1>;
+  const handleShow = (id) => {
+    console.log(id, "SHOW");
+  };
+  return;
 }
 
 export default Show;
