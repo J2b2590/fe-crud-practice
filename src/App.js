@@ -34,9 +34,22 @@ function App(props) {
     <div className="app">
       <h1>TODO</h1>
       <div>
-        <TodoContainer todos={todos} handleDelete={handleDelete} />
         <Switch>
-          <Route component={Show} exact path="/todos/show/:id" />
+          <Route
+            exact
+            path="/"
+            render={(props) => (
+              <div>
+                <TodoContainer
+                  component={TodoContainer}
+                  todos={todos}
+                  handleDelete={handleDelete}
+                />
+              </div>
+            )}
+          />
+
+          <Route component={Show} exact path="/todos/:id" />
         </Switch>
         {/* <Counter />
         <Icons /> */}
