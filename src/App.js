@@ -5,6 +5,7 @@ import TodoContainer from "./container/todo_container";
 import Show from "./Show";
 import Counter from "./Counter";
 import Icons from "./Icon";
+import NewForm from "./NewForm";
 
 import axios from "axios";
 import "./App.css";
@@ -38,9 +39,11 @@ function App(props) {
   return (
     <div className="app">
       <h1>TODO</h1>
+      {display ? <NewForm /> : null}
       <div>
         <button onClick={handleClick}>CLICK TO SHOW FORM</button>
       </div>
+
       <div>
         <Switch>
           <Route
