@@ -15,7 +15,6 @@ function Todos(props) {
     <div>
       <li>{props.text}</li>
       <button onClick={() => props.handleDelete(props.id)}>Delete</button>
-      {/* <button onClick={() => props.handleShow(props.id)}>show</button> */}
     </div>
   );
 }

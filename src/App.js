@@ -11,6 +11,7 @@ import "./App.css";
 
 function App(props) {
   let [todos, setTodos] = useState([]);
+  let [display, setDisplay] = useState(false);
   console.log(props, "APPPPP");
 
   useEffect(() => {
@@ -18,7 +19,7 @@ function App(props) {
       setTodos(res.data);
     });
     // console.log(todos);
-  }, [...todos]);
+  }, []);
 
   const handleDelete = (id) => {
     axios.delete(`http://localhost:3000/todos/${id}`).then((del) => {
@@ -29,10 +30,16 @@ function App(props) {
       // console.log(del);
     });
   };
+  const handleClick = () => {
+    console.log("HANDLE CLICK");
+  };
 
   return (
     <div className="app">
       <h1>TODO</h1>
+      <div>
+        <button onClick={handleClick}>CLICK TO SHOW FORM</button>
+      </div>
       <div>
         <Switch>
           <Route
