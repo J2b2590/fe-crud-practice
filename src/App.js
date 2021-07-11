@@ -32,6 +32,7 @@ function App(props) {
   };
   const handleClick = () => {
     console.log("HANDLE CLICK");
+    setDisplay(!display);
   };
 
   return (
