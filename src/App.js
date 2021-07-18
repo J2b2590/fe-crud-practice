@@ -6,7 +6,7 @@ import Show from "./Show";
 import Counter from "./Counter";
 import Icons from "./Icon";
 import NewForm from "./NewForm";
-import { midiplayer } from "Midi";
+import { midiplayer } from "./Midi";
 
 import axios from "axios";
 import "./App.css";
@@ -43,6 +43,9 @@ function App(props) {
       {display ? <NewForm /> : null}
       <div>
         <button onClick={handleClick}>CLICK TO SHOW FORM</button>
+      </div>
+      <div>
+        <button onClick={midiplayer}>CLICK FOR NOTE</button>
       </div>
 
       <div>
