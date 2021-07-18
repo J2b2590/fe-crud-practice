@@ -6,6 +6,7 @@ import Show from "./Show";
 import Counter from "./Counter";
 import Icons from "./Icon";
 import NewForm from "./NewForm";
+import { midiplayer } from "Midi";
 
 import axios from "axios";
 import "./App.css";
