@@ -52,6 +52,7 @@ function TodoContainer(props) {
           <Todos
             key={todo.id}
             newTodos={text}
+            midiplayerC2={props.midiplayerC2}
             {...todo}
             handleDelete={props.handleDelete}
           />

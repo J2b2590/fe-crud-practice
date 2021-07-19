@@ -15,6 +15,7 @@ function Todos(props) {
     <div>
       <li>{props.text}</li>
       <button onClick={() => props.handleDelete(props.id)}>Delete</button>
+      <button onClick={() => props.midiplayerC2(props.id)}>C</button>
     </div>
   );
 }

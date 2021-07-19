@@ -62,6 +62,7 @@ function App(props) {
             render={(props) => (
               <div>
                 <TodoContainer
+                  midiplayerC2={midiplayerC2}
                   component={TodoContainer}
                   todos={todos}
                   handleDelete={handleDelete}
